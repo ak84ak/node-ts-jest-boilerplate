@@ -1,0 +1,49 @@
+{
+  "name": "node-ts-jest-boilerplate",
+  "version": "0.1.0",
+  "description": "Node + Typescript + Jest boilerplate",
+  "main": "build/src/index.js",
+  "scripts": {
+    "start": "npm run build && node build/src/index.js",
+    "clean": "rimraf coverage build tmp",
+    "build": "npm run clean && tsc -p tsconfig.release.json",
+    "watch": "tsc -w -p tsconfig.json",
+    "lint": "tslint -t stylish --type-check --project tsconfig.json",
+    "pretest": "npm run lint",
+    "test": "npm run test-only",
+    "test-only": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ak84ak/node-ts-jest-boilerplate.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "jest",
+    "boilerplate"
+  ],
+  "devDependencies": {
+    "@types/jest": "~20.0.2",
+    "@types/node": "~8.0.28",
+    "jest": "~21.1.0",
+    "rimraf": "~2.6.1",
+    "tslint": "~5.7.0",
+    "tslint-microsoft-contrib": "~5.0.1",
+    "tsutils": "~2.8.2",
+    "typescript": "~2.5.2"
+  },
+  "dependencies": {
+    "inversify": "^4.3.0",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.2",
+    "tslib": "~1.7.1"
+  },
+  "author": "Andrii Krasylnykov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ak84ak/node-ts-jest-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ak84ak/node-ts-jest-boilerplate#readme"
+}
